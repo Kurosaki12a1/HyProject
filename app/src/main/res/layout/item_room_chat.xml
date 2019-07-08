@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/border_cyan"
+    android:orientation="horizontal"
+    android:padding="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/tvRoomName"
+        tools:text="room 1"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tvNumberJoin"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:text="@string/number_ppl_join"/>
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        tools:text=" 2/10"
+        />
+
+
+</LinearLayout>

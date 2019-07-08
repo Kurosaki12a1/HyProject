@@ -45,6 +45,9 @@ public class HomeBottomNavigationView extends BottomNavigationView implements Bo
             case R.id.menu_option:
                 viewPager.setCurrentItem(HomePagerAdapter.SETTINGS_PAGE_TITLE);
                 break;
+            case R.id.menu_notification:
+                viewPager.setCurrentItem(HomePagerAdapter.NOTIFICATION_PAGE_TITLE);
+                break;
         }
         return true;
     }

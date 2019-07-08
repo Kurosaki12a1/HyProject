@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hy.project.R;
+import com.hy.project.activity.AccountActivity;
 import com.hy.project.model.Profile;
 
 import static com.hy.project.fragment.LoginFragment.MESSAGE_INVALID_PASSWORD;
@@ -118,7 +119,7 @@ public class RegisterFragment extends Fragment {
                                 sendEmailVerify();
                                 DatabaseReference dbProfile = FirebaseDatabase.getInstance().getReference(ACCOUNT_PATH);
                                 dbProfile.child(userId).setValue(profile);
-
+                                ((AccountActivity)getActivity()).changeToHomeActivity();
 
                             } else {
                                 showMessage(MESSAGE_REGISTER_FAILURE);

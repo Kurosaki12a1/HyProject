@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/elevation">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/chat_toolbar_height"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryBarBackground"
+        android:contentInsetStart="@dimen/_10sdp"
+        android:paddingStart="0dp"
+        android:paddingTop="@dimen/small_padding"
+        android:paddingEnd="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:navigationIcon="@drawable/ic_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRoomName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                tools:text="Phòng số 1" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_5sdp"
+                tools:text="Số người tham gia: 10/10" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</androidx.cardview.widget.CardView>

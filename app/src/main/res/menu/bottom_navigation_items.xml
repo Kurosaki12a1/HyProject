@@ -6,9 +6,14 @@
         android:title="@string/message" />
 
     <item
-        android:id="@+id/menu_option"
-        android:icon="@mipmap/ic_list_friend"
-        android:title="@string/settings" />
+    android:id="@+id/menu_option"
+    android:icon="@mipmap/ic_list_friend"
+    android:title="@string/settings" />
+
+    <item
+        android:id="@+id/menu_notification"
+        android:icon="@drawable/ic_notifiy_on"
+        android:title="@string/notify" />
 
 
 

@@ -37,4 +37,7 @@
     <string name="message">Tin nhắn</string>
     <string name="settings">Cài Đặt</string>
     <string name="search">Tìm kiếm gì đó…</string>
+    <string name="number_ppl_join">Số người đã tham gia: </string>
+    <string name="notify">Thông báo</string>
+    <string name="hint_chat">Ghi gì đó.. </string>
 </resources>

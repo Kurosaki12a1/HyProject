@@ -13,6 +13,10 @@ public class Profile {
         this.email = email;
     }
 
+    public Profile(){
+
+    }
+
     public String getUserName() {
         return userName;
     }
