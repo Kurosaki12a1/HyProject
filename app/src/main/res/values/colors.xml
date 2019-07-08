@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#121214</color>
+    <color name="textColorPrimary">#282828</color>
+    <color name="colorPrimaryBackground">#ffffff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorLetterSideText">#000000</color>
+    <color name="textColorLogin">#fff</color>
+    <color name="textColorScreenDark">#fff</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorTextDialog">#0099dd</color>
+    <color name="textColorSubTitle">#939393</color>
+    <color name="textColorChapterNormal">#b4b0b0</color>
+    <color name="textColorTotal">#d66321</color>
+    <color name="backgroundSignIn">#2C2C2C</color>
+    <color name="colorBlack">#282828</color>
+    <color name="colorBlackTransparent">#66282828</color>
+    <color name="colorTrueBlack">#000000</color>
+    <color name="bg_contain_connect_device">#333333</color>
+    <color name="button_connect">#1699DA</color>
+    <color name="color_contract">#626262</color>
+    <color name="backgroundImageIPTV">#333333</color>
+    <color name="toolbarColor">#282828</color>
+    <color name="colorButtonAlert">#ea4747</color>
+    <color name="color_error">#FF0000</color>
+    <color name="tintRating">#ea4747</color>
+    <color name="tintRatingSecond">#ffe100</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="link_blue">#4d94ff</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="green">#00ff00</color>
+    <color name="colorRed">#FF0000</color>
+
+
+    <color name="sinch_purple">#ff63029d</color>
+    <color name="off_white">#fffafafa</color>
+    <color name="greyish">#fff2f1f2</color>
+    <color name="colorYellow">#ffff00</color>
+
+    <color name="editTextBackground">#ffffff</color>
+    <color name="colorPrimaryBarBackground">#FFF7F7</color>
+    <color name="blackshadow">#7F000000</color>
+</resources>

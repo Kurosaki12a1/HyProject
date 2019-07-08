@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="sign_up_by_phone">Đăng ký bằng số điện thoại</string>
+    <string name="sign_up_by_email_and_password">Đăng ký bằng email và password</string>
+    <string name="btn_login">Đăng Nhập</string>
+    <string name="btn_forgot_password">Quên mật khẩu?</string>
+    <string name="btn_link_to_register">Bạn là người mới? Hãy đăng ký !</string>
+
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mật Khẩu</string>
+    <string name="hint_phone">Nhập số điện thoại</string>
+    <string name="hint_code">Mã xác nhận</string>
+
+    <string name="user_name">Tên tài khoản</string>
+    <string name="question">Bạn có phải là người khiếm thính không?</string>
+
+
+    <string name="btn_login_email_password">Đăng Nhập bằng Email và Password</string>
+    <string name="btn_login_by_phone">Đăng Nhập bằng Số Điện Thoại</string>
+    <string name="action_sign_in_short">Đăng ký</string>
+    <string name="action_sign_in_by_email_password">Đăng ký bằng Email và Password</string>
+    <string name="action_sign_in_by_phone">Đăng ký bằng số điện thoại</string>
+    <string name="btn_link_to_login">Đã có tài khoản? Hãy đăng nhập!</string>
+    <string name="check_login">Kiểm tra mã xác nhận</string>
+    <string name="remember_password">Nhớ mật khẩu</string>
+
+    <string name="btn_back">Trở về màn hình đăng nhập</string>
+    <string name="error_register">Đã có lỗi xảy ra khi đăng ký tài khoản</string>
+    <string name="lbl_forgot_password">Quên mật khẩu?</string>
+    <string name="forgot_password_msg">Chúng tôi cần email của bạn để gửi xác nhận về việc reset mật khẩu.</string>
+    <string name="btn_reset_password">Reset mật khẩu</string>
+    <string name="send_reset_password">Chúng tôi đã gửi xác nhận reset mật khẩu về thư của bạn. Xin vui lòng kiểm tra!!</string>
+</resources>
