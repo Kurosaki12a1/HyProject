@@ -17,7 +17,15 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account); //Use same layout
-        renderUI( ChatFragment.getInstance(null), "Chat");
+        if(getIntent()!=null){
+            String roomName = getIntent().getStringExtra("ROOM_NAME");
+            String roomId  = getIntent().getStringExtra("ROOM_ID");
+            Bundle bundle = new Bundle();
+            bundle.putString("ROOM_NAME",roomName);
+            bundle.putString("ROOM_ID",roomId);
+            renderUI( ChatFragment.getInstance(bundle), "Chat");
+        }
+
 
     }
 

@@ -11,18 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hy.project.R;
-
 
 
 public class ChatFragment extends Fragment {
 
     Toolbar toolbar;
     TextView tvRoomName, tvNumberJoin;
-    private String roomName;
-    private final String HISTORY_ROOM_CHAT ="HISTORY_ROOM_CHAT";
+    private String roomName, roomId;
+    private final String HISTORY_ROOM_CHAT = "HISTORY_ROOM_CHAT";
 
     public static ChatFragment getInstance(Bundle bundle) {
         ChatFragment frag = new ChatFragment();
@@ -35,6 +37,8 @@ public class ChatFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (getArguments() != null) {
             roomName = getArguments().getString("ROOM_NAME", "");
+            roomId = getArguments().getString("ROOM_ID", "");
+
         }
         return inflater.inflate(R.layout.fragment_chat, container, false);
     }
@@ -46,9 +50,19 @@ public class ChatFragment extends Fragment {
         initHistoryRoomChat();
     }
 
-    private void initHistoryRoomChat(){
+    private void initHistoryRoomChat() {
         DatabaseReference dbHistory = FirebaseDatabase.getInstance().getReference(HISTORY_ROOM_CHAT);
+        dbHistory.child(roomId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void bindView() {
