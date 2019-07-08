@@ -1,6 +1,7 @@
 package com.hy.project.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.hy.project.R;
+import com.hy.project.model.Profile;
 
 import static com.hy.project.fragment.LoginFragment.MESSAGE_INVALID_PASSWORD;
 import static com.hy.project.fragment.LoginFragment.MESSAGE_LOGIN_SUCCESSFUL;
 import static com.hy.project.fragment.LoginFragment.MESSAGE_NO_INPUT_EMAIL;
+import static com.hy.project.fragment.LoginFragment.TAG;
 
 public class RegisterFragment extends Fragment {
 
@@ -35,7 +40,8 @@ public class RegisterFragment extends Fragment {
 
     private static final String MESSAGE_REGISTER_SUCCESSFUL = "MESSAGE_REGISTER_SUCCESSFUL";
     private static final String MESSAGE_REGISTER_FAILURE = "MESSAGE_REGISTER_FAILURE";
-
+    private static final String DEFAULT_AVATAR = "https://firebasestorage.googleapis.com/v0/b/silentmessage-3990f.appspot.com/o/default_avatar.jpg?alt=media&token=b373d033-17c0-41be-a548-839509d30e46";
+    public static final String ACCOUNT_PATH ="ALL_PROFILE_DATABASE";
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_register, container, false);
@@ -92,7 +98,7 @@ public class RegisterFragment extends Fragment {
         }
     }
 
-    private void signUp(String email, String password) {
+    private void signUp(final String email, String password) {
         if (checkValidate(email, password)) {
             progressBar.setVisibility(View.VISIBLE);
             mAuth.createUserWithEmailAndPassword(email, password)
@@ -101,6 +107,18 @@ public class RegisterFragment extends Fragment {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 showMessage(MESSAGE_REGISTER_SUCCESSFUL);
+                                String userId = mAuth.getCurrentUser().getUid();
+                                String[] part = email.split("@");
+                                Profile profile = new Profile(
+                                        userId,
+                                        part[0],
+                                        DEFAULT_AVATAR,
+                                        email
+                                        );
+                                sendEmailVerify();
+                                DatabaseReference dbProfile = FirebaseDatabase.getInstance().getReference(ACCOUNT_PATH);
+                                dbProfile.child(userId).setValue(profile);
+
 
                             } else {
                                 showMessage(MESSAGE_REGISTER_FAILURE);
@@ -110,6 +128,26 @@ public class RegisterFragment extends Fragment {
                     });
         }
     }
+
+    private void sendEmailVerify() {
+        if(mAuth.getCurrentUser()!=null){
+            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Log.d(TAG,"Send Email Verify Done");
+                    }
+                    else{
+                        Log.d(TAG,"Send Email Fail "+task.getException());
+                    }
+                }
+            });
+        }
+
+    }
+
+
+
 
     private View bindViewById(int id) {
         return getView().findViewById(id);

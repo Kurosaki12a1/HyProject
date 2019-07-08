@@ -33,4 +33,8 @@
     <string name="forgot_password_msg">Chúng tôi cần email của bạn để gửi xác nhận về việc reset mật khẩu.</string>
     <string name="btn_reset_password">Reset mật khẩu</string>
     <string name="send_reset_password">Chúng tôi đã gửi xác nhận reset mật khẩu về thư của bạn. Xin vui lòng kiểm tra!!</string>
+
+    <string name="message">Tin nhắn</string>
+    <string name="settings">Cài Đặt</string>
+    <string name="search">Tìm kiếm gì đó…</string>
 </resources>

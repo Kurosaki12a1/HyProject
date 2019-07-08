@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_chat"
+        android:icon="@drawable/ic_forum_grey600_24dp"
+        android:title="@string/message" />
+
+    <item
+        android:id="@+id/menu_option"
+        android:icon="@mipmap/ic_list_friend"
+        android:title="@string/settings" />
+
+
+
+</menu>
