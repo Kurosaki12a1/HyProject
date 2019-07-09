@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hy.project.R;
+import com.hy.project.activity.ChatActivity;
 import com.hy.project.activity.HomeActivity;
 import com.hy.project.adapter.MessageChatAdapter;
 import com.hy.project.model.MessageChatDatabase;
@@ -125,7 +126,7 @@ public class ChatFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                if (getActivity() != null) getActivity().onBackPressed();
+                if (getActivity() != null) ((ChatActivity)getActivity()).finish();
             }
         });
 
