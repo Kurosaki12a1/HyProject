@@ -1,5 +1,6 @@
 package com.hy.project.activity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -24,6 +25,7 @@ import com.hy.project.HomeBottomNavigationView;
 import com.hy.project.R;
 import com.hy.project.adapter.HomePagerAdapter;
 import com.hy.project.model.Profile;
+import com.hy.project.model.RoomChat;
 
 import static com.hy.project.adapter.HomePagerAdapter.MESSAGE_PAGE_TITLE;
 import static com.hy.project.adapter.HomePagerAdapter.SETTINGS_PAGE_TITLE;
@@ -38,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView imgAvatar;
     TextView txtPageTitle;
     DatabaseReference dbProfile = FirebaseDatabase.getInstance().getReference(ACCOUNT_PATH);
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,7 +95,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void initSearchView(){
+    private void initSearchView() {
 
     }
 
@@ -106,6 +109,7 @@ public class HomeActivity extends AppCompatActivity {
                             Glide.with(HomeActivity.this).load(profile.getAvatarURL())
                                     .apply(RequestOptions.circleCropTransform())
                                     .into(imgAvatar);
+
                         }
                     }
 
@@ -115,5 +119,12 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    public void goToChatActivity(RoomChat dataRoom){
+        Intent intent = new Intent(HomeActivity.this,ChatActivity.class);
+        intent.putExtra("ROOM_NAME",dataRoom.getRoomName());
+        intent.putExtra("ROOM_ID",dataRoom.getRoomId());
+        startActivity(intent);
     }
 }

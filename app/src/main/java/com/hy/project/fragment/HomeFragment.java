@@ -1,5 +1,6 @@
 package com.hy.project.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hy.project.R;
+import com.hy.project.activity.HomeActivity;
 import com.hy.project.adapter.RoomChatAdapter;
 import com.hy.project.model.RoomChat;
 
@@ -93,6 +95,6 @@ public class HomeFragment extends Fragment implements RoomChatAdapter.OnClickIte
 
     @Override
     public void onClick(RoomChat dataRoom) {
-
+        ((HomeActivity)getActivity()).goToChatActivity(dataRoom);
     }
 }
